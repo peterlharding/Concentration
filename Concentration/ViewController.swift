@@ -13,18 +13,38 @@ class ViewController: UIViewController {
     lazy var game = Concentration(numberOfPairsOfCards: (cardButtons.count + 1)/2)
     
     var faceUp = true;
-    var emojiChoices = ["🎃","👻","💀","👹","☠️","🦑","🐉","🐲"]
+    var emojiSet = ["🎃","👻","💀","👹","☠️","🦑","🐉","🐲"]
+    var emojiChoices = [String]()
     
     var emoji = [Int:String]()
     
 
     @IBOutlet var cardButtons: [UIButton]!
     @IBOutlet weak var flipCountLabel: UILabel!
+    @IBOutlet weak var gameCountLabel: UILabel!
     
-    var flipCount = 0{
+    //--------------------------------------------------------------------------
+
+    var flipCount = 0 {
         didSet {
             flipCountLabel.text = "Flips:  \(flipCount)"
         }
+    }
+    //--------------------------------------------------------------------------
+    
+    var gameCount = 0 {
+        didSet {
+            gameCountLabel.text = "Games:  \(gameCount)"
+        }
+    }
+    //--------------------------------------------------------------------------
+
+    @IBAction func NewGame(_ sender: UIButton) {
+        flipCount = 0
+        gameCount += 1
+        emojiChoices = emojiSet
+        game = Concentration(numberOfPairsOfCards: (cardButtons.count + 1)/2)
+        updateViewFromModel()
     }
     
     //--------------------------------------------------------------------------
@@ -73,13 +93,10 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        emojiChoices = emojiSet
         updateViewFromModel()
-        var shuffledCardButtons = [UIButton]()
-        while cardButtons.count > 0 {
-            let randomIndex = Int(arc4random_uniform(UInt32(cardButtons.count)))
-            shuffledCardButtons.append(cardButtons.remove(at: randomIndex))
-        }
-        cardButtons = shuffledCardButtons
+        flipCount = 0
+        gameCount = 0
     }
     
     //--------------------------------------------------------------------------
