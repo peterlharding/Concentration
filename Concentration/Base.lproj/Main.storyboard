@@ -171,9 +171,12 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oBH-Rx-2CD">
-                                <rect key="frame" x="149" y="615" width="117" height="42"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oBH-Rx-2CD">
+                                <rect key="frame" x="149" y="615" width="116" height="42"/>
                                 <accessibility key="accessibilityConfiguration" label="New Game"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="42" id="7tD-lb-DgJ"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <state key="normal" title="New Game">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -197,16 +200,17 @@
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="oBH-Rx-2CD" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="149" id="4x3-Tg-Jce"/>
                             <constraint firstItem="P7L-ai-oSG" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="6uD-rI-qBL"/>
+                            <constraint firstItem="oBH-Rx-2CD" firstAttribute="top" secondItem="eoc-Dh-3yD" secondAttribute="bottom" constant="2" id="77m-PM-oEK"/>
                             <constraint firstItem="eoc-Dh-3yD" firstAttribute="top" relation="greaterThanOrEqual" secondItem="uAE-wY-Lzk" secondAttribute="bottom" constant="8" symbolic="YES" id="BlH-Ej-tbk"/>
                             <constraint firstItem="eoc-Dh-3yD" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="CsT-wm-ed9"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="P7L-ai-oSG" secondAttribute="bottom" constant="20" id="Fdv-cG-wIE"/>
-                            <constraint firstItem="P7L-ai-oSG" firstAttribute="top" secondItem="oBH-Rx-2CD" secondAttribute="bottom" constant="20" id="cNk-L1-nQk"/>
                             <constraint firstItem="uAE-wY-Lzk" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="ciU-LR-hYE"/>
                             <constraint firstItem="uAE-wY-Lzk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="eWr-Fs-pW2"/>
+                            <constraint firstItem="P7L-ai-oSG" firstAttribute="top" secondItem="oBH-Rx-2CD" secondAttribute="bottom" constant="23" id="kZW-OY-4Eo"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="uAE-wY-Lzk" secondAttribute="trailing" constant="20" id="kwn-Fx-qYK"/>
-                            <constraint firstItem="oBH-Rx-2CD" firstAttribute="top" secondItem="eoc-Dh-3yD" secondAttribute="bottom" constant="8" symbolic="YES" id="q9c-zt-hgC"/>
-                            <constraint firstItem="oBH-Rx-2CD" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="qLo-WC-lCJ"/>
+                            <constraint firstItem="oBH-Rx-2CD" firstAttribute="centerX" secondItem="eoc-Dh-3yD" secondAttribute="centerX" id="qWG-CV-Ut3"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
